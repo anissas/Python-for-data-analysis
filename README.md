@@ -26,6 +26,7 @@ Vous trouverez dans ce Github:
 
   - Le fichier Readme qui introduisant notre jeu de données, notre API et nos résulats 
   - Une présentation Powerpoint expliquant les tenants et aboutissants du problème, ainsi que nos réflexions et choix
+  - Le dataset en format csv
   - Le fichier de code au format Jupyter
   - Le fichier relatif à l'API
 
