@@ -37,7 +37,13 @@ Afin de comprendre les variables et la facon dont elles influencaient la classe 
 
 Voici notre matrice de corrélation ainsi que plusieurs exemples de graphiques entre nos variable et la variables "Revenue":
 
-
 ## Résultats
+
+Nous avons realisé plusieurs modèles de classification binaire sur notre jeu de données comme par exemple le KNN, la régression logistique ou même l'arbre décisionnel. Afin de comprendre le fonctionnement des modeles par rapport à nos données et d'analyser la précision, nous avons, pour chaque modele, appliqué le grid search afin de trouver les meilleurs hyper-paramètres. 
+
+Nous comparons ensuite tous les modèles (avec les meilleurs hyper paramètres pour chacun) pour en conclure sur le meilleur modele: 
+
+L'arbre décisionnel est donc le meilleur modèle parmi tout les modèles de classification testés avec les paramètres 'criterion':"gini" et 'max_depth':4.
+Cela nous permet de trouver une précision de 0.902.
 
 ## Notre API
