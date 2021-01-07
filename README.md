@@ -30,7 +30,6 @@ Vous trouverez dans ce Github:
   - Le fichier de code au format Jupyter
   - Le fichier relatif à l'API
 
-## Librairies utilisées
 
 ## Analyse du probleme 
 
@@ -48,3 +47,52 @@ L'arbre décisionnel est donc le meilleur modèle parmi tout les modèles de cla
 Cela nous permet de trouver une précision de 0.902.
 
 ## Notre API
+
+Nous avons réalisé une API grâce à Flask en Python.
+
+Deux npoint ont été créés:
+"/": Accueil de l'utilisateur sur notre API
+
+"/predict" methods 'post':
+L'utilisateur entre un tableau de ligne à prédire et notre meilleur modèle sort les prédictions faites dans un tableau.
+
+Fichier contenant nos lignes du xtest:
+x_test.json
+
+Test de l'API:
+Ouvrez un invite de commande.
+Placez vous dans le répertoire où se situe le fichier appPython.py 
+Tapez sur une console:
+
+❯ cd /path/to/workspace/API
+❯ python appPython.py
+
+(Notre API se lance toujours sur le port 80 car nous l'avons définit nous même)
+
+Avec postman copiez le lien: "http://127.0.0.1:80/predict" 
+
+Choisir "POST":
+
+Sélectionnez Body
+
+Sélectionnez raw
+
+Copiez/Collez toutes ou quelques lignes depuis le fichier x_test.json fourni.
+
+⚠️ Les lignes copiées doivent être contenues dans un tableau comme dans l'exemple suivant:
+
+[
+    {"Administrative":0,"Administrative_Duration":0.0,"Informational":0,"Informational_Duration":0.0,"ProductRelated":1,"ProductRelated_Duration":0.0,"BounceRates":0.2,"ExitRates":0.2,"PageValues":0.0,"SpecialDay":0.0,"Month":1,"OperatingSystems":1,"Browser":1,"Region":1,"TrafficType":1,"VisitorType":1,"Weekend":0},
+    {"Administrative":0,"Administrative_Duration":0.0,"Informational":0,"Informational_Duration":0.0,"ProductRelated":2,"ProductRelated_Duration":64.0,"BounceRates":0.0,"ExitRates":0.1,"PageValues":0.0,"SpecialDay":0.0,"Month":1,"OperatingSystems":2,"Browser":2,"Region":1,"TrafficType":2,"VisitorType":1,"Weekend":0},
+    {"Administrative":0,"Administrative_Duration":0.0,"Informational":0,"Informational_Duration":0.0,"ProductRelated":1,"ProductRelated_Duration":0.0,"BounceRates":0.2,"ExitRates":0.2,"PageValues":0.0,"SpecialDay":0.0,"Month":1,"OperatingSystems":4,"Browser":1,"Region":9,"TrafficType":3,"VisitorType":1,"Weekend":0},
+    {"Administrative":0,"Administrative_Duration":0.0,"Informational":0,"Informational_Duration":0.0,"ProductRelated":2,"ProductRelated_Duration":2.666666667,"BounceRates":0.05,"ExitRates":0.14,"PageValues":0.0,"SpecialDay":0.0,"Month":1,"OperatingSystems":3,"Browser":2,"Region":2,"TrafficType":4,"VisitorType":1,"Weekend":0},
+    {"Administrative":0,"Administrative_Duration":0.0,"Informational":0,"Informational_Duration":0.0,"ProductRelated":10,"ProductRelated_Duration":627.5,"BounceRates":0.02,"ExitRates":0.05,"PageValues":0.0,"SpecialDay":0.0,"Month":1,"OperatingSystems":3,"Browser":3,"Region":1,"TrafficType":4,"VisitorType":1,"Weekend":1},
+    {"Administrative":0,"Administrative_Duration":0.0,"Informational":0,"Informational_Duration":0.0,"ProductRelated":19,"ProductRelated_Duration":154.2166667,"BounceRates":0.015789474,"ExitRates":0.024561404,"PageValues":0.0,"SpecialDay":0.0,"Month":1,"OperatingSystems":2,"Browser":2,"Region":1,"TrafficType":3,"VisitorType":1,"Weekend":0},
+    {"Administrative":0,"Administrative_Duration":0.0,"Informational":0,"Informational_Duration":0.0,"ProductRelated":1,"ProductRelated_Duration":0.0,"BounceRates":0.2,"ExitRates":0.2,"PageValues":0.0,"SpecialDay":0.4,"Month":1,"OperatingSystems":2,"Browser":4,"Region":3,"TrafficType":3,"VisitorType":1,"Weekend":0},
+    {"Administrative":1,"Administrative_Duration":0.0,"Informational":0,"Informational_Duration":0.0,"ProductRelated":0,"ProductRelated_Duration":0.0,"BounceRates":0.2,"ExitRates":0.2,"PageValues":0.0,"SpecialDay":0.0,"Month":1,"OperatingSystems":1,"Browser":2,"Region":1,"TrafficType":5,"VisitorType":1,"Weekend":1}
+]
+
+Exemple de sortie: 
+{
+    "prediction": "[0, 0, 0, 0, 0, 0, 0, 0]"
+}
