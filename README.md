@@ -51,6 +51,7 @@ Cela nous permet de trouver une précision de 0.902.
 Nous avons réalisé une API grâce à Flask en Python.
 
 Deux npoint ont été créés:
+
 "/": Accueil de l'utilisateur sur notre API
 
 "/predict" methods 'post':
