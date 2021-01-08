@@ -66,6 +66,7 @@ Placez vous dans le répertoire où se situe le fichier appPython.py
 Tapez sur une console:
 
 ❯ cd /path/to/workspace/API
+
 ❯ python appPython.py
 
 (Notre API se lance toujours sur le port 80 car nous l'avons définit nous même)
